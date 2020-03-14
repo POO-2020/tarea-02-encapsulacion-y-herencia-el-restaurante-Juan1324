@@ -1,10 +1,11 @@
 const mesAño =["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sept","Oct","Nov","Dic"]
 const diaSemana=["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]
+
 export default class Fecha{
     constructor(dia,mes,año){
   
         this._fecha=new Date(año,mes -1, dia);
-        this._difFecha= new Date (Date.now() - this.fecha)
+        this._difFecha= new Date (Date.now() - this._fecha)
     }
     getAños(){
         let canAños = 1000 * 60 * 60 * 24 * 365;
