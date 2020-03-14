@@ -2,9 +2,10 @@ import Producto from "./producto.js"
 export default class ElementoPedido{
 
     constructor(cantidad, producto){
-        this.producto = producto;
-        this.cantidad = cantidad;
+        this._producto = producto;
+        this._cantidad = cantidad;
     }
+    
     
     getDescripcion(){
         let cosTotal = (this._cantidad * this._producto.getPrecio())
