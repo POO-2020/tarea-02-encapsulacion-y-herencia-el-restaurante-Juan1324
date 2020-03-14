@@ -1,17 +1,17 @@
 export default class Tiempo{
     constructor(hora,minutos,periodo){
-        this.hora=hora;
-        this.minutos=minutos;
-        this.periodo=periodo;
+        this._hora=hora;
+        this._minutos=minutos;
+        this._periodo=periodo;
     }
         getFormato12(){
-            return (`${this.hora}:${this.minutos} ${this.periodo}`);
+            return (`${this._hora}:${this._minutos} ${this._periodo}`);
         }
         getFormato24(){
-            if (this.hora !=12 && this.periodo=="pm"){
-                return (`${this.hora+12}:${this.minutos}`);
+            if (this._hora !=12 && this._periodo=="pm"){
+                return (`${this._hora+12}:${this._minutos}`);
             }else{     
             }
-            return (`${this.hora}:${this.minutos}`);
+            return (`${this._hora}:${this._minutos}`);
         }
 }
