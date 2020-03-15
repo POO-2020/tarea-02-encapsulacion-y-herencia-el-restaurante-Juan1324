@@ -7,4 +7,10 @@ export default class Producto{
     getDescripcion(){
         return (`${this._nombre} ${this._precio.getPrecio()}`);
     }
+    getNombre(){
+        return this._nombre
+    }
+    getPrecio(){
+        return this._precio
+    }
 }
