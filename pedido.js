@@ -6,7 +6,7 @@ export default class Pedido{
         this._hora = hora;
         this._cliente = cliente;
         this._numeroPedido= numeroPedido;
-        this._NuelementosPedidos = []
+        this._NuelementosPedidos = [];
 
     }
     getNumeroElementos(){
@@ -36,6 +36,9 @@ export default class Pedido{
         })}
         getResumen(){
             return (`${this._fecha.getFecha()} ${this._hora.getFormato12()} \n- ${this.getNumeroElementos()} Elementos con ${this.getNumeroProductos()} Productos.`);
+        }
+        getNumeroPedido(){
+            return this._numeroPedido
         }
     
     }
