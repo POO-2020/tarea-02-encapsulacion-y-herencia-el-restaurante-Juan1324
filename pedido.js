@@ -6,7 +6,7 @@ export default class Pedido{
         this._hora = hora;
         this._cliente = cliente;
         this._numeroPedido= numeroPedido;
-        this._NoelmentosPedidos = [];
+        this._NoelmentosPedidos = []
 
     }
     getNumeroElementos(){
@@ -46,6 +46,10 @@ export default class Pedido{
         }
     getNumeroPedido(){
         return this._numeroPedido
+        }
+       _esIgual(pedido){
+        if(pedido.getNumeroPedido() == this._numeroPedido){ return true}
+        else {return false}
         }
      }
     
