@@ -2,8 +2,8 @@ import Precio from "./precio.js";
 export default class ElementoPedido{
 
     constructor(cantidad, producto){
-        this._producto = producto;
         this._cantidad = cantidad;
+        this._producto = producto;
     }
     
     
@@ -14,5 +14,8 @@ export default class ElementoPedido{
     }
     getCantidad(){
         return this._cantidad
+    }
+    getPrecio(){
+        return this._producto.getPrecio()
     }
 }
