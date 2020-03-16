@@ -6,39 +6,47 @@ export default class Pedido{
         this._hora = hora;
         this._cliente = cliente;
         this._numeroPedido= numeroPedido;
-        this._NuelementosPedidos = [];
+        this._NoelmentosPedidos = [];
 
     }
     getNumeroElementos(){
-        return (`${this._NuelementosPedidos.length}`);
-    }
+        return (`${this._NoelmentosPedidos.length}`);
+    }   
+
     getNumeroProductos(){
         var productoNum = 0;
-        this._NuelementosPedidos.forEach(elemento =>{
-            productoNum += elemento.cantidad 
-        })
+        this._NoelmentosPedidos.forEach((elemento) =>{
+        productoNum = productoNum +elemento.getCantidad()
+         })
         return (productoNum);
-    }
+        }
+
     getCostoTotal(){
         var costo = 0;
-        this._NuelementosPedidos.forEach(elemento1 => {
-            costo += elemento1.cantidad * elemento1.producto.precio.valor
+        this._NoelmentosPedidos.forEach((elemento)=> {
+        costo =(costo+ (elemento.getPrecio() * elemento.getCantidad()))
         });
-        return (`${new Precio(costo).getPrecio()}`);
+         costo=new Precio(costo)
+         return costo.getPrecio()
+
+        }
+        
+    agregarElemento(elemento){
+       return this._NoelmentosPedidos.push(elemento)
     }
-    agregarElemento(elemento1){
-        return (`${this._NuelementosPedidos.push(elemento1)}`);
-    }      
+
     listarElementos(){
         console.log("Listado de los Platillos")
-        this._NuelementosPedidos.forEach(elemento =>{
-            console.log(elemento.getDescripcion());       
-        })}
-        getResumen(){
-            return (`${this._fecha.getFecha()} ${this._hora.getFormato12()} \n- ${this.getNumeroElementos()} Elementos con ${this.getNumeroProductos()} Productos.`);
-        }
-        getNumeroPedido(){
-            return this._numeroPedido
-        }
+        this._NoelmentosPedidos.forEach((elemento,x) =>{
+            console.log(`(${x + 1}) ${elemento.getDescripcion()}`);
+        });}    
     
-    }
+    getResumen(){
+        return (`${this._fecha.getFecha()} ${this._hora.getFormato12()} \n- ${this.getNumeroElementos()} Elementos con ${this.getNumeroProductos()} Productos- Costo total ${this.getCostoTotal()}`);
+        }
+    getNumeroPedido(){
+        return this._numeroPedido
+        }
+     }
+    
+
