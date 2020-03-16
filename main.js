@@ -10,8 +10,6 @@ import ClienteFrecuente from "./clienteFrecuente.js";
 
 
 
-
-
 class Main{
     constructor(){
         
@@ -25,11 +23,14 @@ class Main{
         this.producto= new Producto("Tacos de Adobada",this.precio)
         this.producto2= new Producto("Agua de limón", this.precio2)
         
-        this.elementoPedido= new ElementoPedido(this.producto,2)
+        this.elementoPedido= new ElementoPedido(this.producto,1)
 
-        this.elementoPedido2= new ElementoPedido(this.producto2,3)
+        this.elementoPedido2= new ElementoPedido(this.producto2,2)
 
         this.cliente= new Cliente("Aarón Astilla Gurierrez",this.direccion,3128764320)
+
+        this.fecha= new Fecha(13,5,2018)
+        this.tiempo= new Tiempo(2,30,"pm")
 
         let infPedido ={
             fecha: new Fecha(13,2,2018),
@@ -43,14 +44,14 @@ class Main{
             direccion: new Direccion("Sandoval",435, "2-B","Huertas",209389,"Colima","Colima"),
             telefono:3121986473,
             numeroCliente:3556,
-            fecha: new Fecha(10,3,2018)
+            fechaRegistro: new Fecha(10,3,2018)
+
         }
+
 
          this.pedido= new Pedido(infPedido)
 
          this.clienteFrecuente= new ClienteFrecuente(infClienteFrecuente)
-
-
          
          this.pedido.agregarElemento(this.elementoPedido)
          this.pedido.agregarElemento(this.elementoPedido2)
@@ -61,8 +62,23 @@ class Main{
             console.log(this.direccion. getFormatoExtendido())
             console.log(this.direccion.getFormatoCorto())
         }
-        probarElemento(){
+        probarPrecio(){
+            console.log(this.precio.getPrecio())
+        }
+        probarProducto(){
+            console.log(this.producto.getDescripcion())
+        }
+        probarElementoPedido(){
             console.log(this.elementoPedido.getDescripcion())
+        }
+        probarFecha(){
+            console.log(this.fecha.getAños())
+            console.log(this.fecha.getMeses())
+            console.log(this.fecha.getSemanas())
+            console.log(this.fecha.getDias())
+            console.log(this.fecha.getFecha())
+            console.log(this.fecha.getDiaFecha())
+            
         }
         probarCliente(){
             console.log(this.cliente.getPerfil())
@@ -73,12 +89,29 @@ class Main{
             console.log(this.pedido.getNumeroProductos())
             console.log(this.pedido.getCostoTotal())
             this.pedido.listarElementos()
+        }
+        probarTiempo(){
+            console.log(this.tiempo.getFormato12())
+            console.log(this.tiempo.getFormato24())
 
+        }
+        probarCliente(){
+            console.log(this.cliente.getPerfil())
+        }
 
+        probarClienteFrecuente(){
+            console.log(this.clienteFrecuente.getPerfil())
         }
 
 
     }
 
 let app=new Main();
-app.probarPedido();
+//app.probarCliente();
+//app.probarDireccion();
+//app.probarElementoPedido();
+//app.probarPedido();
+//app.probarPrecio();
+//app.probarFecha();
+//app.probarTiempo();
+app.probarClienteFrecuente();
