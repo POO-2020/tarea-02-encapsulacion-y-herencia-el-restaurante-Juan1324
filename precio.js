@@ -1,18 +1,19 @@
-export default class Precio {
-    /**
-     *
-     * @param {number} valor El valor del producto
-     */
-    constructor(valor) {
-      this._valor = valor;
-    }
-  
-    getPrecio() {
-      return this._valor.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'MXN'
-      });
-    }
+const formatterDolar = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD'
+})
+
+export default class Precio{
+  constructor(valor)
+  {
+      this._valor = valor     
   }
+  getPrecio(){   
+      return (`${formatterDolar.format(this._valor)}`)
+  }
+  getValor(){
+      return this._valor
+  }
+}
 
   

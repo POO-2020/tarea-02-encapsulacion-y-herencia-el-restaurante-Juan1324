@@ -11,6 +11,6 @@ export default class Producto{
         return this._nombre
     }
     getPrecio(){
-        return this._precio
+        return this._precio.getValor()
     }
 }
