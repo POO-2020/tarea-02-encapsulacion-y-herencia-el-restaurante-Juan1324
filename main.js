@@ -7,6 +7,7 @@ import Pedido from "./pedido.js";
 import Tiempo from "./tiempo.js"
 import Cliente from "./cliente.js";
 import ClienteFrecuente from "./clienteFrecuente.js";
+import Restaurante from "./restaurante.js"
 
 
 
@@ -19,11 +20,15 @@ class Main{
 
         this.precio= new Precio(7.50)
         this.precio2= new Precio(10.50)
+        this.precio3= new Precio(35.50)
 
-        this.producto= new Producto("Tacos de Adobada",this.precio)
+
+        this.producto1= new Producto("Tacos de Adobada",this.precio)
         this.producto2= new Producto("Agua de limón", this.precio2)
+        this.producto2= new Producto("Agua de limón", this.precio2)
+        this.producto3= new Producto("Pie", this.precio3)
         
-        this.elementoPedido= new ElementoPedido(this.producto,1)
+        this.elementoPedido= new ElementoPedido(this.producto1,1)
 
         this.elementoPedido2= new ElementoPedido(this.producto2,2)
 
@@ -36,7 +41,21 @@ class Main{
             fecha: new Fecha(13,2,2018),
             hora: new Tiempo(11,30,"am"),
             cliente: this.cliente,
-            numeroDePedido: 2
+            numeroPedido: 20
+        }
+
+        let infPedido2 ={
+            fecha: new Fecha(18,2,2018),
+            hora: new Tiempo(12,30,"am"),
+            cliente: this.cliente,
+            numeroPedido: 43
+        }
+
+        let infPedido3 ={
+            fecha: new Fecha(20,4,2018),
+            hora: new Tiempo(15,30,"pm"),
+            cliente: this.cliente,
+            numeroPedido: 12
         }
 
         let infClienteFrecuente ={
@@ -45,13 +64,22 @@ class Main{
             telefono:3121986473,
             numeroCliente:3556,
             fechaRegistro: new Fecha(10,3,2018)
-
+            
+        }
+        let infrestaurante={
+            nombre: "El Trebol",
+            telefono: 3123435643,
+            direccion: this.direccionRest
         }
 
 
          this.pedido= new Pedido(infPedido)
+         this.pedido2= new Pedido(infPedido2)
+         this.pedido3= new Pedido(infPedido3)
 
          this.clienteFrecuente= new ClienteFrecuente(infClienteFrecuente)
+         
+         this.restaurante= new Restaurante(infrestaurante)
          
          this.pedido.agregarElemento(this.elementoPedido)
          this.pedido.agregarElemento(this.elementoPedido2)
@@ -66,7 +94,7 @@ class Main{
             console.log(this.precio.getPrecio())
         }
         probarProducto(){
-            console.log(this.producto.getDescripcion())
+            console.log(this.producto1.getDescripcion())
         }
         probarElementoPedido(){
             console.log(this.elementoPedido.getDescripcion())
@@ -102,16 +130,46 @@ class Main{
         probarClienteFrecuente(){
             console.log(this.clienteFrecuente.getPerfil())
         }
+        probarRestaurante(){
+            this.restaurante.registrarProducto(this.producto1)
+            this.restaurante.registrarProducto(this.producto2)
+            this.restaurante.registrarProducto(this.producto3)
+
+            //Registro (si es doble da un false por el segundo)
+            console.log(this.restaurante.registrarPedido(this.pedido))
+            console.log(this.restaurante.registrarPedido(this.pedido2))
+            console.log(this.restaurante.registrarPedido(this.pedido2))
+
+            //Eliminado True
+            console.log(this.restaurante.eliminarPedido(this.pedido3))
+
+            //Eliminado False
+            console.log(this.restaurante.eliminarPedido(this.pedido))
+
+            //Se agrega otor pedido
+            console.log(this.restaurante.registrarPedido(this.pedido3))
+
+            //actualizar pedido
+            console.log(this.restaurante.actualizarPedido(this.pedido, this.pedido3))
+
+            //Buscar
+            console.log(this.restaurante.buscarPedido(this.pedido3))
+
+            
+        this.restaurante.listarProductos()
+        this.restaurante.listarPedidos()
+        }
 
 
     }
 
 let app=new Main();
-//app.probarCliente();
-//app.probarDireccion();
-//app.probarElementoPedido();
-//app.probarPedido();
-//app.probarPrecio();
-//app.probarFecha();
-//app.probarTiempo();
+app.probarCliente();
+app.probarDireccion();
+app.probarElementoPedido();
+app.probarPedido();
+app.probarPrecio();
+app.probarFecha();
+app.probarTiempo();
 app.probarClienteFrecuente();
+app.probarRestaurante();
