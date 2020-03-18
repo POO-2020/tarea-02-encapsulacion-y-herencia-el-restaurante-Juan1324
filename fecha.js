@@ -4,6 +4,7 @@ const diaSemana=["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Saba
 export default class Fecha{
     constructor(dia,mes,año){
   
+        
         this._fecha=new Date(año,mes -1, dia);
         this._difFecha= new Date (Date.now() - this._fecha)
     }

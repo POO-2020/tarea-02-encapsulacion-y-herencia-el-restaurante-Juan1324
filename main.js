@@ -153,7 +153,7 @@ class Main{
             console.log(this.restaurante.actualizarPedido(this.pedido, this.pedido3))
 
             //Buscar
-            console.log(this.restaurante.buscarPedido(this.pedido.getNumeroPedido()))
+            console.log(this.restaurante.buscarPedido(this.pedido))
 
             
         this.restaurante.listarProductos()
@@ -164,11 +164,11 @@ class Main{
 
 let app=new Main();
 app.probarCliente();
-app.probarDireccion();
-app.probarElementoPedido();
-app.probarPedido();
-app.probarPrecio();
-app.probarFecha();
-app.probarTiempo();
-app.probarClienteFrecuente();
-app.probarRestaurante();
+//app.probarDireccion();
+//app.probarElementoPedido();
+//app.probarPedido();
+//app.probarPrecio();
+//app.probarFecha();
+//app.probarTiempo();
+//app.probarClienteFrecuente();
+//app.probarRestaurante();

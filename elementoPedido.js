@@ -6,7 +6,6 @@ export default class ElementoPedido{
         this._producto = producto
         this._cantidad = cantidad
     }
-
     getDescripcion(){
         let total = (this._cantidad * this._producto.getPrecio())
         total = new Precio (total)

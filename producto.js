@@ -17,7 +17,6 @@ export default class Producto{
     getNumeroProducto(){
         return this._numeroProducto
     }
-
     _esIgual(producto){
         if(producto.getNumeroProducto() == this._numeroProducto){ return true}
         else {return false}

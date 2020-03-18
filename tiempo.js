@@ -1,4 +1,5 @@
 export default class Tiempo{
+    
     constructor(hora,minutos,periodo){
         this._hora=hora;
         this._minutos=minutos;

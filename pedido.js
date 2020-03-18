@@ -7,7 +7,6 @@ export default class Pedido{
         this._cliente = cliente;
         this._numeroPedido= numeroPedido;
         this._NoelmentosPedidos = []
-
     }
     getNumeroElementos(){
         return (`${this._NoelmentosPedidos.length}`);

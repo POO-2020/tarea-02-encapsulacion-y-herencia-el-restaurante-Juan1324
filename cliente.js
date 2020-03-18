@@ -12,6 +12,7 @@ export default class Cliente{
         this._direccion=direccion;
         this._telefono=telefono;
 
+        
     }
     getPerfil(){
         return(`${this._nombre}, ${this._direccion.getFormatoExtendido()}, ${this._telefono}`);

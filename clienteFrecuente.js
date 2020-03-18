@@ -7,7 +7,6 @@ export default class ClienteFrecuente extends Cliente{
         super(nombre, direccion, telefono)
         this._numeroCliente=numeroCliente;
         this._fechaRegistro=fechaRegistro;
-
     }
 
     getPerfil(){

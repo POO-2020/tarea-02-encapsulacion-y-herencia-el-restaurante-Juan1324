@@ -12,7 +12,6 @@ export default class Restaurante{
     }
 
   registrarProducto(producto){
-       
         let encontrar = this.buscarProducto(producto)
        
          if(encontrar == null){this._productos.push(producto)
