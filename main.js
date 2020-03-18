@@ -157,18 +157,17 @@ class Main{
 
             
         this.restaurante.listarProductos()
-        this.restaurante.listarPedidos()
         }
 
     }
 
 let app=new Main();
 app.probarCliente();
-//app.probarDireccion();
-//app.probarElementoPedido();
-//app.probarPedido();
-//app.probarPrecio();
-//app.probarFecha();
-//app.probarTiempo();
-//app.probarClienteFrecuente();
-//app.probarRestaurante();
+app.probarDireccion();
+app.probarElementoPedido();
+app.probarPedido();
+app.probarPrecio();
+app.probarFecha();
+app.probarTiempo();
+app.probarClienteFrecuente();
+app.probarRestaurante();

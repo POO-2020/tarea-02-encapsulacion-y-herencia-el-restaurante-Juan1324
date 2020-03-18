@@ -1,5 +1,7 @@
 import Direccion from "./direccion.js"
 import Pedido from "./pedido.js"
+import Producto from "./producto.js"
+
 
 export default class Restaurante{
 

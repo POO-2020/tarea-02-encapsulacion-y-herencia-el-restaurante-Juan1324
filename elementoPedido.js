@@ -1,4 +1,5 @@
 import Precio from "./precio.js";
+import Producto from "./producto.js"
 export default class ElementoPedido{
 
     constructor(producto, cantidad)

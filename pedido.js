@@ -1,4 +1,9 @@
+import ElementoPedido from "./elementoPedido.js";
+import Producto from "./producto.js"
+import Tiempo from "./tiempo.js"
+import Cliente from "./cliente.js";
 import Precio from "./precio.js";
+import Fecha from "./fecha.js"
 
 export default class Pedido{
     constructor({fecha,hora,cliente,numeroPedido}){

@@ -1,3 +1,5 @@
+import Precio from "./precio.js";
+
 export default class Producto{
 
     constructor(nombre,precio,numeroProducto){
