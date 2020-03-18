@@ -44,9 +44,11 @@ export default class Pedido{
     getResumen(){
         return (`${this._fecha.getFecha()} ${this._hora.getFormato12()} \n- ${this.getNumeroElementos()} Elementos con ${this.getNumeroProductos()} Productos- Costo total ${this.getCostoTotal()}`);
         }
+
     getNumeroPedido(){
         return this._numeroPedido
         }
+        
        _esIgual(pedido){
         if(pedido.getNumeroPedido() == this._numeroPedido){ return true}
         else {return false}

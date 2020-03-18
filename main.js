@@ -153,7 +153,7 @@ class Main{
             console.log(this.restaurante.actualizarPedido(this.pedido, this.pedido3))
 
             //Buscar
-            console.log(this.restaurante.buscarPedido(this.pedido3))
+            console.log(this.restaurante.buscarPedido(this.pedido.getNumeroPedido()))
 
             
         this.restaurante.listarProductos()

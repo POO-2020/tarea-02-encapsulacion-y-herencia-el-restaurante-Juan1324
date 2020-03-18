@@ -11,10 +11,16 @@ export default class Restaurante{
         this._pedidos = []
     }
 
+  registrarProducto(producto){
+       
+        let encontrar = this.buscarProducto(producto)
+       
+         if(encontrar == null){this._productos.push(producto)
+         return true}
+         else
+         {return false}
+     }
 
-    registrarProducto(producto){  
-        this._productos.push(producto);
-    }
     registrarPedido(pedido){
        
         let encontrar = this.buscarPedido(pedido)
@@ -23,8 +29,6 @@ export default class Restaurante{
          return true}
          else
          {return false}
- 
-         
      }
     listarProductos(){
         this._productos.forEach((producto) =>{
@@ -57,6 +61,12 @@ export default class Restaurante{
     }
     buscarPedido(pedido){
         let buscar = this._pedidos.find(ped => ped._esIgual(pedido))
+        if(buscar == undefined){return null}
+        else {return buscar}
+    }
+
+    buscarProducto(producto){
+        let buscar = this._productos.find(ped => ped._esIgual(producto))
         if(buscar == undefined){return null}
         else {return buscar}
     }
